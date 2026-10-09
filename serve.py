@@ -1,14 +1,3 @@
-"""
-mitmproxy addon: spoof DNS for TARGET and serve PAYLOAD to HTTP requests
-whose Host header is TARGET (or a subdomain) and whose path is TARGET_PATH.
-Everything else passes through. Hits are marked so mitmdump can show only them.
-
-Run (as your normal user, not root):
-  nix-shell -p mitmproxy --run 'mitmdump \
-    --mode transparent@18080 --mode dns@15353 \
-    --set termlog_verbosity=warn --set dumper_filter="~marked" \
-    -s ~/mitm/serve.py'
-"""
 
 import ipaddress
 import logging
